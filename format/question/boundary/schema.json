@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions" : {
+    "marker":{
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "time": {
+          "type": "number"
+        },
+        "before": {
+            "type": "number"
+        },
+        "after": {
+            "type": "number"
+        },
+        "valid":{
+          "type": "boolean"
+        }
+      },
+      "required": ["id", "time", "valid"]
+    },
+    "region":{
+      "type": "object",
+      "properties": {
+        "id": {
+          "type" : "string"
+        },
+        "markers": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "#/definitions/marker"
+          }
+        }
+      },
+      "required": ["id", "markers"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "http://json-quiz.github.io/json-quiz/schemas/question/base/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "application/x.boundary+json"
+          ]
+        },
+        "audio": {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json"
+        },
+        "solution": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items":{
+            "type" : "object",
+            "properties": {
+              "region": {
+                "$ref": "#/definitions/region"
+              },
+              "score": {
+                "type": "number"
+              },
+              "feedback": {
+                "type": "string"
+              }
+            },
+            "required": ["region", "score"]
+          }
+        }
+      },
+      "required": ["audio"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "type": "application/x.spotting+json",
+  "title": "Where is the cat ?",
+  "audio": {
+    "id": "12",
+    "meta": {
+      "label": "The cat"
+    }
+  }
+}

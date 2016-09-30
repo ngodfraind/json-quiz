@@ -1,0 +1,18 @@
+{
+  "objects": "not-an-array",
+  "meta": "not-an-object",
+  "solutions": [
+    {
+      "marker": {
+        "id": "1",
+        "time": 20.4,
+        "before": 1,
+        "after": 1,
+        "valid": true
+      },
+      "score": 2,
+      "feedback" : "He is in the kitchen"
+    }
+  ],
+  "audio": "not a content type"
+}

@@ -1,0 +1,13 @@
+{
+  "id": 5,
+  "type": "application/x.spotting+json",
+  "title": "Find where Jerry says where Tomy is ?",
+  "audio": {
+    "id": "12",
+    "meta": {
+      "label": "The cat"
+    },
+    "type": "audio/mp3",
+    "url": "http://domain.com/audio/the_cat.mp3"
+  }
+}

@@ -21,6 +21,7 @@ var resolved = {
   'short-question': 'question/short',
   'cloze-answer': 'answer/cloze',
   'cloze-question': 'question/cloze',
+  'spotting-question': 'question/spotting',
   'step': 'step',
   'quiz': 'quiz'
 };
