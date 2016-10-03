@@ -15,12 +15,9 @@
         },
         "after": {
             "type": "number"
-        },
-        "valid":{
-          "type": "boolean"
         }
       },
-      "required": ["id", "time", "valid"]
+      "required": ["id", "time"]
     },
     "region":{
       "type": "object",
@@ -28,16 +25,17 @@
         "id": {
           "type" : "string"
         },
-        "markers": {
-          "type": "array",
-          "minItems": 2,
-          "uniqueItems": true,
-          "items": {
-            "type": "#/definitions/marker"
-          }
+        "start": {
+          "type": "#/definitions/marker"
+        },
+        "end":{
+          "type": "#/definitions/marker"
+        },
+        "valid":{
+          "type": "boolean"
         }
       },
-      "required": ["id", "markers"]
+      "required": ["id", "sart", "end", "valid"]
     }
   },
   "allOf": [
@@ -52,15 +50,15 @@
             "application/x.boundary+json"
           ]
         },
-        "audio": {
+        "file": {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json"
         },
-        "solution": {
+        "solutions": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
           "items":{
-            "type" : "object",
+            "type": "object",
             "properties": {
               "region": {
                 "$ref": "#/definitions/region"
@@ -76,7 +74,7 @@
           }
         }
       },
-      "required": ["audio"]
+      "required": ["file"]
     }
   ]
 }

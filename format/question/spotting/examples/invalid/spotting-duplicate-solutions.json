@@ -2,7 +2,7 @@
   "id": "1",
   "type": "application/x.spotting+json",
   "title": "Find where Jerry says where Tomy is ?",
-  "audio": {
+  "file": {
     "id": "12",
     "meta": {
       "label": "The cat"

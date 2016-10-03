@@ -2,7 +2,7 @@
   "id": "1",
   "type": "application/x.boundary+json",
   "title": "Find where Jerry says where Tomy is ?",
-  "audio": {
+  "file": {
     "id": "12",
     "meta": {
       "label": "The cat"
@@ -14,44 +14,42 @@
     {
       "region": {
         "id": "2",
-        "markers": [
-          {
+        "start": {
             "id": "1",
             "time": 20.4,
             "before": 1,
-            "after": 1,
-            "valid": true
-          },
-          {
+            "after": 1
+        },
+        "end":{
             "id": "2",
             "time": 25,
             "before": 2,
-            "after": 0,
-            "valid": true
-          }
-        ]
+            "after": 0
+        },
+        "valid": true
       },
       "score": 2,
-      "feedback" : "He is in the kitchen"
+      "feedback" : "He is in the kitchen",
     },
     {
       "region": {
         "id": "1",
-        "markers": [
-          {
-            "id": "7",
-            "time": 28,
-            "valid": false
-          },
-          {
-            "id": "14",
-            "time": 32,
-            "valid": false
-          }
-        ]
+        "start": {
+          "id": "7",
+          "time": 28,
+          "before": 1,
+          "after": 0
+        },
+        "end":{
+          "id": "14",
+          "time": 32,
+          "before": 1,
+          "after": 2
+        },
+        "valid": false
       },
-      "score": -2,
-      "feedback" : "No... he is speacking about the fish"
+      "score": -1,
+      "feedback" : "No... he speaks about the fish"
     }
   ]
 }

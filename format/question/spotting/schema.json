@@ -15,12 +15,24 @@
         },
         "after": {
             "type": "number"
-        },
-        "valid": {
-            "type": "boolean"
         }
       },
-      "required": ["id", "time", "valid"]
+      "required": ["id", "time"]
+    },
+    "region":{
+      "type": "object",
+      "properties": {
+        "id": {
+          "type" : "string"
+        },
+        "start": {
+          "$ref": "#/definitions/marker"
+        },
+        "valid":{
+          "type": "boolean"
+        }
+      },
+      "required": ["id", "start", "valid"]
     }
   },
   "allOf": [
@@ -35,7 +47,7 @@
             "application/x.spotting+json"
           ]
         },
-        "audio": {
+        "file": {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json"
         },
         "solutions": {
@@ -43,10 +55,10 @@
           "minItems": 1,
           "uniqueItems": true,
           "items":{
-            "type" : "object",
+            "type": "object",
             "properties": {
-              "marker": {
-                "$ref": "#/definitions/marker"
+              "region": {
+                "$ref": "#/definitions/region"
               },
               "score": {
                 "type": "number"
@@ -55,11 +67,11 @@
                 "type": "string"
               }
             },
-            "required": ["marker", "score"]
+            "required": ["region", "score"]
           }
         }
       },
-      "required": ["audio"]
+      "required": ["file"]
     }
   ]
 }

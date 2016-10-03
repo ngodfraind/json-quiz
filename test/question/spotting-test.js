@@ -13,9 +13,9 @@ describe('Spotting question', function () {
         });
       });
 
-      it('must have a *audio* property', function () {
-        assert.hasError('spotting-no-audio', {
-          '.audio': 'property .audio is required'
+      it('must have a *file* property', function () {
+        assert.hasError('spotting-no-file', {
+          '.file': 'property .file is required'
         });
       });
 
@@ -24,24 +24,65 @@ describe('Spotting question', function () {
       });
     });
 
-    describe('The *audio* property', function () {
+    describe('The *file* property', function () {
       it('must satisfy the #content# schema', function () {
-        assert.hasError('spotting-audio-not-satisfying-content-schema', {
-          '.audio.type': 'property .type is required'
+        assert.hasError('spotting-file-not-satisfying-content-schema', {
+          '.file.type': 'property .type is required'
         });
       });
     });
 
     describe('The *solutions* property', function () {
-        it('must be an array', function () {
-          assert.hasError('spotting-solutions-not-an-array', {
-            '.solutions': 'should be array'
+      it('must be an array', function () {
+        assert.hasError('spotting-solutions-not-an-array', {
+          '.solutions': 'should be array'
+        });
+      });
+
+      it('must contain at least one solution', function () {
+        assert.hasError('spotting-empty-solutions-array', {
+          '.solutions': 'should NOT have less than 1 items'
+        });
+      });
+
+      describe('The *score* property', function () {
+        it('must be a number', function () {
+          assert.hasError('spotting-solution-score-is-not-a-number', {
+            '.solutions[0].score': 'should be number'
           });
         });
-        describe('Each solution', function () {
-        it('Must be unique', function () {
+      });
+
+      describe('Each solution', function () {
+        it('must be object', function () {
+          assert.hasError('spotting-solution-is-not-an-object', {
+            '.solutions[0]': 'should be object'
+          });
+        });
+
+        it('must be unique', function () {
           assert.hasError('spotting-duplicate-solutions', {
             '.solutions': 'items ## 0 and 1 are duplicate'
+          });
+        });
+
+        it('must have a *score* property', function () {
+          assert.hasError('spotting-solutions-no-score', {
+            '.solutions[0].score': 'property .score is required'
+          });
+        });
+
+        it('must have a *region* property', function () {
+          assert.hasError('spotting-solutions-no-region', {
+            '.solutions[0].region': 'property .region is required'
+          });
+        });
+
+        describe('Each region', function () {
+          it('must be object', function () {
+            assert.hasError('spotting-solution-region-is-not-an-object', {
+              '.solutions[0].region': 'should be object'
+            });
           });
         });
       });

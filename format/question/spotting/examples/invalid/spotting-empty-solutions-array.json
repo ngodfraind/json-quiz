@@ -1,7 +1,7 @@
 {
   "id": "1",
-  "type": "application/x.boundary+json",
-  "title": "Where is the cat ?",
+  "type": "application/x.spotting+json",
+  "title": "Find where Jerry says where Tomy is ?",
   "file": {
     "id": "12",
     "meta": {
@@ -9,5 +9,6 @@
     },
     "type": "audio/mp3",
     "url": "http://domain.com/audio/the_cat.mp3"
-  }
+  },
+  "solutions": []
 }

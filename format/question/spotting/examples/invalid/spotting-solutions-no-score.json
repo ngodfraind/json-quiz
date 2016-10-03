@@ -10,5 +10,16 @@
     "type": "audio/mp3",
     "url": "http://domain.com/audio/the_cat.mp3"
   },
-  "solutions": "not-an-array"
+  "solutions": [
+    {
+      "region": {
+        "id": "7",
+        "start": {
+          "id": "4",
+          "time": 7
+        },
+        "valid": true
+      }
+    }
+  ]
 }
