@@ -1,5 +1,5 @@
 {
   "id": "1",
-  "type": "application/x.spotting+json",
+  "type": "application/x.period+json",
   "title": "Where is the cat ?"
 }

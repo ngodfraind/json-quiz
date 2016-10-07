@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.spotting+json",
+  "type": "application/x.moment+json",
   "title": "Find where Jerry says where Tomy is ?",
   "file": {
     "id": "12",
@@ -12,30 +12,24 @@
   },
   "solutions": [
     {
-      "region":{
+      "marker":{
         "id": "1",
-        "start": {
-          "id": "1",
-          "time": 20.4,
-          "before": 1,
-          "after": 1
-        },
-        "valid": true
+        "time": 20.4,
+        "before": 1,
+        "after": 1
       },
-      "score": "not a number",
+      "valid" : true,
+      "score": 2,
       "feedback": "He is in the kitchen"
     },
     {
-      "region":{
+      "marker":{
         "id": "2",
-        "start": {
-          "id": "7",
-          "time": 22.8,
-          "before": 0,
-          "after": 1
-        },
-        "valid": false
+        "time": 22.8,
+        "before": 0,
+        "after": 1
       },
+      "valid": false,
       "score": -1,
       "feedback": "No... Here Jerry speaks about the fish"
     }

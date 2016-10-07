@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.spotting+json",
+  "type": "application/x.moment+json",
   "title": "Find where Jerry says where Tomy is ?",
   "file": {
     "id": "12",
@@ -10,5 +10,7 @@
     "type": "audio/mp3",
     "url": "http://domain.com/audio/the_cat.mp3"
   },
-  "solutions": []
+  "solutions": [
+    "not an object"
+  ]
 }

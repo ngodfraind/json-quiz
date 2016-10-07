@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.spotting+json",
+  "type": "application/x.moment+json",
   "title": "Find where Jerry says where Tomy is ?",
   "file": {
     "id": "12",
@@ -12,26 +12,26 @@
   },
   "solutions": [
     {
-      "marker": {
+      "marker":{
         "id": "1",
         "time": 20.4,
         "before": 1,
-        "after": 1,
-        "valid": true
+        "after": 1
       },
+      "valid" : true,
       "score": 2,
-      "feedback" : "He is in the kitchen"
+      "feedback": "He is in the kitchen"
     },
     {
-      "marker": {
+      "marker":{
         "id": "1",
         "time": 20.4,
         "before": 1,
-        "after": 1,
-        "valid": true
+        "after": 1
       },
+      "valid" : true,
       "score": 2,
-      "feedback" : "He is in the kitchen"
+      "feedback": "He is in the kitchen"
     }
   ]
 }

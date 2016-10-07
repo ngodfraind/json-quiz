@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "http://json-quiz.github.io/json-quiz/schemas/question/base/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "application/x.moment+json"
+          ]
+        },
+        "file": {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json"
+        },
+        "maximum":{
+          "type": "number",
+          "default": 0,
+          "description": "The maximum amount of marker the user will be able to draw. O means infinite."
+        },
+        "solutions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items":{
+            "type": "object",
+            "properties": {
+              "marker": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "time": {
+                    "type": "number",
+                    "description": "The perfect moment"
+                  },
+                  "before": {
+                    "type": "number",
+                    "description": "Tolerance before the marker",
+                    "default": 0
+                  },
+                  "after": {
+                    "type": "number",
+                    "description": "Tolerance after the marker",
+                    "default": 0
+                  }
+                },
+                "required": ["id", "time"]
+              },
+              "valid": {
+                "type": "boolean",
+                "default": true
+              },
+              "score": {
+                "type": "number"
+              },
+              "feedback": {
+                "type": "string"
+              }
+            },
+            "required": ["marker", "valid", "score"]
+          }
+        }
+      },
+      "required": ["file"]
+    }
+  ]
+}

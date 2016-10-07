@@ -1,10 +1,10 @@
-var assert = require('./../../assert')('spotting-question');
+var assert = require('./../../assert')('moment-question');
 
-describe('Spotting question', function () {
+describe('Moment question', function () {
   describe('Schema', function () {
-    describe('A spotting question', function () {
+    describe('A moment question', function () {
       it('must satisfy the #base-question# schema', function () {
-        assert.hasErrors('spotting-not-satisfying-base-schema', {
+        assert.hasErrors('moment-not-satisfying-base-schema', {
           '.id': 'property .id is required',
           '.type': 'property .type is required',
           '.title': 'property .title is required',
@@ -14,19 +14,19 @@ describe('Spotting question', function () {
       });
 
       it('must have a *file* property', function () {
-        assert.hasError('spotting-no-file', {
+        assert.hasError('moment-no-file', {
           '.file': 'property .file is required'
         });
       });
 
       it('may have a *solutions* property', function () {
-        assert.isValid('spotting-solutions');
+        assert.isValid('moment-solutions');
       });
     });
 
     describe('The *file* property', function () {
       it('must satisfy the #content# schema', function () {
-        assert.hasError('spotting-file-not-satisfying-content-schema', {
+        assert.hasError('moment-file-not-satisfying-content-schema', {
           '.file.type': 'property .type is required'
         });
       });
@@ -34,20 +34,20 @@ describe('Spotting question', function () {
 
     describe('The *solutions* property', function () {
       it('must be an array', function () {
-        assert.hasError('spotting-solutions-not-an-array', {
+        assert.hasError('moment-solutions-not-an-array', {
           '.solutions': 'should be array'
         });
       });
 
       it('must contain at least one solution', function () {
-        assert.hasError('spotting-empty-solutions-array', {
+        assert.hasError('moment-empty-solutions-array', {
           '.solutions': 'should NOT have less than 1 items'
         });
       });
 
       describe('The *score* property', function () {
         it('must be a number', function () {
-          assert.hasError('spotting-solution-score-is-not-a-number', {
+          assert.hasError('moment-solution-score-is-not-a-number', {
             '.solutions[0].score': 'should be number'
           });
         });
@@ -55,33 +55,33 @@ describe('Spotting question', function () {
 
       describe('Each solution', function () {
         it('must be object', function () {
-          assert.hasError('spotting-solution-is-not-an-object', {
+          assert.hasError('moment-solution-is-not-an-object', {
             '.solutions[0]': 'should be object'
           });
         });
 
         it('must be unique', function () {
-          assert.hasError('spotting-duplicate-solutions', {
+          assert.hasError('moment-duplicate-solutions', {
             '.solutions': 'items ## 0 and 1 are duplicate'
           });
         });
 
         it('must have a *score* property', function () {
-          assert.hasError('spotting-solutions-no-score', {
+          assert.hasError('moment-solutions-no-score', {
             '.solutions[0].score': 'property .score is required'
           });
         });
 
-        it('must have a *region* property', function () {
-          assert.hasError('spotting-solutions-no-region', {
-            '.solutions[0].region': 'property .region is required'
+        it('must have a *marker* property', function () {
+          assert.hasError('moment-solutions-no-marker', {
+            '.solutions[0].marker': 'property .marker is required'
           });
         });
 
-        describe('Each region', function () {
+        describe('Each marker', function () {
           it('must be object', function () {
-            assert.hasError('spotting-solution-region-is-not-an-object', {
-              '.solutions[0].region': 'should be object'
+            assert.hasError('moment-solution-marker-is-not-an-object', {
+              '.solutions[0].marker': 'should be object'
             });
           });
         });
@@ -91,8 +91,8 @@ describe('Spotting question', function () {
 
   describe('Examples', function () {
     assert.areValid([
-      'spotting-basic',
-      'spotting-solutions'
+      'moment-basic',
+      'moment-solutions'
     ]);
   });
 });

@@ -8,34 +8,21 @@
           "type": "string"
         },
         "time": {
-          "type": "number"
+          "type": "number",
+          "description": "The perfect moment"
         },
         "before": {
-            "type": "number"
+          "type": "number",
+          "description": "Tolerance before the marker",
+          "default": 0
         },
         "after": {
-            "type": "number"
+          "type": "number",
+          "description": "Tolerance after the marker",
+          "default": 0
         }
       },
       "required": ["id", "time"]
-    },
-    "region":{
-      "type": "object",
-      "properties": {
-        "id": {
-          "type" : "string"
-        },
-        "start": {
-          "type": "#/definitions/marker"
-        },
-        "end":{
-          "type": "#/definitions/marker"
-        },
-        "valid":{
-          "type": "boolean"
-        }
-      },
-      "required": ["id", "sart", "end", "valid"]
     }
   },
   "allOf": [
@@ -47,11 +34,16 @@
       "properties": {
         "type": {
           "enum": [
-            "application/x.boundary+json"
+            "application/x.period+json"
           ]
         },
         "file": {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json"
+        },
+        "maximum":{
+          "type": "number",
+          "default": 0,
+          "description": "The maximum amount of region the user will be able to draw. O means infinite."
         },
         "solutions": {
           "type": "array",
@@ -61,7 +53,23 @@
             "type": "object",
             "properties": {
               "region": {
-                "$ref": "#/definitions/region"
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type" : "string"
+                  },
+                  "start": {
+                    "type": "#/definitions/marker"
+                  },
+                  "end":{
+                    "type": "#/definitions/marker"
+                  }
+                },
+                "required": ["id", "sart", "end"]
+              },
+              "valid":{
+                "type": "boolean",
+                "default": true
               },
               "score": {
                 "type": "number"
@@ -70,7 +78,7 @@
                 "type": "string"
               }
             },
-            "required": ["region", "score"]
+            "required": ["region", "valid", "score"]
           }
         }
       },

@@ -1,5 +1,5 @@
 {
   "id": "1",
-  "type": "application/x.boundary+json",
+  "type": "application/x.moment+json",
   "title": "Where is the cat ?"
 }
