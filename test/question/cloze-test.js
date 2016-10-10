@@ -7,7 +7,7 @@ describe('Cloze question', function () {
         assert.hasErrors('not-satisfying-base-schema', {
           '.id': 'property .id is required',
           '.type': 'property .type is required',
-          '.title': 'property .title is required',
+          '.content': 'property .content is required',
           '.meta': 'should be object',
           '.objects': 'should be array'
         });
@@ -195,43 +195,9 @@ describe('Cloze question', function () {
         });
 
         describe('Each answer', function () {
-          it('must be an object', function () {
-            assert.hasError('solution-answer-is-not-an-object', {
+          it('must satisfy the #keyword# schema', function () {
+            assert.hasError('solution-answer-not-satisfying-keyword-schema', {
               '.solutions[0].answers[0]': 'should be object'
-            });
-          });
-
-          it('must be unique', function () {
-            assert.hasError('duplicate-solution-answer', {
-              '.solutions[0].answers': 'items ## 0 and 1 are duplicate'
-            });
-          });
-
-          it('must have a *text* property', function () {
-            assert.hasError('no-solution-answer-text', {
-              '.solutions[0].answers[0].text': 'property .text is required'
-            });
-          });
-
-          it('must have a *score* property', function () {
-            assert.hasError('no-solution-answer-score', {
-              '.solutions[0].answers[0].score': 'property .score is required'
-            });
-          });
-
-          describe('The text property', function () {
-            it('must be a string', function () {
-              assert.hasError('solution-answer-text-is-not-a-string', {
-                '.solutions[0].answers[0].text': 'should be string'
-              });
-            });
-          });
-
-          describe('The score property', function () {
-            it('must be a number', function () {
-              assert.hasError('solution-answer-score-is-not-a-number', {
-                '.solutions[0].answers[0].score': 'should be number'
-              });
             });
           });
         });

@@ -1,7 +1,7 @@
 {
   "id": "1",
   "type": "application/x.cloze+json",
-  "title": "Question ?",
+  "content": "Question ?",
   "text": "Lorem [[1]] dolor sit [[2]].",
   "holes": [
     {
@@ -19,6 +19,7 @@
       "answers": [
         {
           "text": "ipsum",
+          "caseSensitive": false,
           "score": 1
         }
       ]
@@ -28,6 +29,7 @@
       "answers": [
         {
           "text": "ipsum",
+          "caseSensitive": false,
           "score": 1
         }
       ]

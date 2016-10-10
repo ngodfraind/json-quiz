@@ -7,6 +7,7 @@ var Ajv = require('ajv');
 var ajv = Ajv({ allErrors: true });
 
 var resolved = {
+  'keyword': 'misc/keyword',
   'metadata': 'metadata',
   'content': 'content',
   'hint': 'hint',
@@ -17,10 +18,11 @@ var resolved = {
   'match-answer': 'answer/match',
   'match-question': 'question/match',
   'sort-question': 'question/sort',
-  'short-answer': 'answer/short',
-  'short-question': 'question/short',
+  'words-answer': 'answer/words',
+  'words-question': 'question/words',
   'cloze-answer': 'answer/cloze',
   'cloze-question': 'question/cloze',
+  'open-question': 'question/open',
   'moment-question': 'question/moment',
   'period-question': 'question/period',
   'step': 'step',
