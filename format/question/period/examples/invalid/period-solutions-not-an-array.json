@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.moment+json",
+  "type": "application/x.spotting+json",
   "title": "Find where Jerry says where Tomy is ?",
   "file": {
     "id": "12",

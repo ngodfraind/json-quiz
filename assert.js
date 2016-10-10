@@ -22,6 +22,7 @@ var resolved = {
   'cloze-answer': 'answer/cloze',
   'cloze-question': 'question/cloze',
   'moment-question': 'question/moment',
+  'period-question': 'question/period',
   'step': 'step',
   'quiz': 'quiz'
 };

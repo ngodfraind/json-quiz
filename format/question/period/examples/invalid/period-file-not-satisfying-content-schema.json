@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "type": "application/x.period+json",
+  "title": "Where is the cat ?",
+  "file": {
+    "id": "12",
+    "meta": {
+      "label": "The cat"
+    }
+  }
+}

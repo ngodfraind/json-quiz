@@ -30,7 +30,7 @@
       },
       "valid": true,
       "score": 2,
-      "feedback" : "He is in the kitchen",
+      "feedback" : "He is in the kitchen"
     },
     {
       "region": {
@@ -50,7 +50,7 @@
       },
       "valid": true,
       "score": 2,
-      "feedback" : "He is in the kitchen",
+      "feedback" : "He is in the kitchen"
     }
   ]
 }

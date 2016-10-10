@@ -1,10 +1,10 @@
-var assert = require('./../../assert')('moment-question');
+var assert = require('./../../assert')('period-question');
 
-describe('Moment question', function () {
+describe('Period question', function () {
   describe('Schema', function () {
-    describe('A moment question', function () {
+    describe('A period question', function () {
       it('must satisfy the #base-question# schema', function () {
-        assert.hasErrors('moment-not-satisfying-base-schema', {
+        assert.hasErrors('period-not-satisfying-base-schema', {
           '.id': 'property .id is required',
           '.type': 'property .type is required',
           '.title': 'property .title is required',
@@ -14,19 +14,19 @@ describe('Moment question', function () {
       });
 
       it('must have a *file* property', function () {
-        assert.hasError('moment-no-file', {
+        assert.hasError('period-no-file', {
           '.file': 'property .file is required'
         });
       });
 
       it('may have a *solutions* property', function () {
-        assert.isValid('moment-solutions');
+        assert.isValid('period-solutions');
       });
     });
 
     describe('The *id* property', function () {
       it('must be a string', function () {
-        assert.hasError('moment-id-not-a-string', {
+        assert.hasError('period-id-not-a-string', {
           '.id': 'should be string'
         });
       });
@@ -34,7 +34,7 @@ describe('Moment question', function () {
 
     describe('The *file* property', function () {
       it('must satisfy the #content# schema', function () {
-        assert.hasError('moment-file-not-satisfying-content-schema', {
+        assert.hasError('period-file-not-satisfying-content-schema', {
           '.file.type': 'property .type is required'
         });
       });
@@ -42,20 +42,20 @@ describe('Moment question', function () {
 
     describe('The *solutions* property', function () {
       it('must be an array', function () {
-        assert.hasError('moment-solutions-not-an-array', {
+        assert.hasError('period-solutions-not-an-array', {
           '.solutions': 'should be array'
         });
       });
 
       it('must contain at least one solution', function () {
-        assert.hasError('moment-empty-solutions-array', {
+        assert.hasError('period-empty-solutions-array', {
           '.solutions': 'should NOT have less than 1 items'
         });
       });
 
       describe('The *score* property', function () {
         it('must be a number', function () {
-          assert.hasError('moment-solution-score-is-not-a-number', {
+          assert.hasError('period-solution-score-is-not-a-number', {
             '.solutions[0].score': 'should be number'
           });
         });
@@ -63,44 +63,37 @@ describe('Moment question', function () {
 
       describe('Each solution', function () {
         it('must be object', function () {
-          assert.hasError('moment-solution-is-not-an-object', {
+          assert.hasError('period-solution-not-an-object', {
             '.solutions[0]': 'should be object'
           });
         });
 
         it('must be unique', function () {
-          assert.hasError('moment-duplicate-solutions', {
+          assert.hasError('period-duplicate-solutions', {
             '.solutions': 'items ## 0 and 1 are duplicate'
           });
         });
 
         it('must have a *score* property', function () {
-          assert.hasError('moment-solutions-no-score', {
+          assert.hasError('period-solution-no-score', {
             '.solutions[0].score': 'property .score is required'
           });
         });
 
-        it('must have a *marker* property', function () {
-          assert.hasError('moment-solutions-no-marker', {
-            '.solutions[0].marker': 'property .marker is required'
+        it('must have a *region* property', function () {
+          assert.hasError('period-solutions-no-region', {
+            '.solutions[0].region': 'property .region is required'
           });
         });
 
-        describe('Each marker', function () {
-          it('must be object', function () {
-            assert.hasError('moment-solution-marker-is-not-an-object', {
-              '.solutions[0].marker': 'should be object'
-            });
-          });
-        });
       });
     });
   });
 
   describe('Examples', function () {
     assert.areValid([
-      'moment-basic',
-      'moment-solutions'
+      'period-basic',
+      'period-solutions'
     ]);
   });
 });

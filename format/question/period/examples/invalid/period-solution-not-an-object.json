@@ -12,11 +12,7 @@
   },
   "maximum": 2,
   "solutions": [
-    {
-      "valid": true,
-      "score": 2,
-      "feedback" : "He is in the kitchen",
-    },
+    "not an object!",
     {
       "region": {
         "id": "1",

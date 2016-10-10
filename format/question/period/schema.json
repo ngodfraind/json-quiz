@@ -59,13 +59,13 @@
                     "type" : "string"
                   },
                   "start": {
-                    "type": "#/definitions/marker"
+                    "$ref": "#/definitions/marker"
                   },
                   "end":{
-                    "type": "#/definitions/marker"
+                    "$ref": "#/definitions/marker"
                   }
                 },
-                "required": ["id", "sart", "end"]
+                "required": ["id", "start", "end"]
               },
               "valid":{
                 "type": "boolean",

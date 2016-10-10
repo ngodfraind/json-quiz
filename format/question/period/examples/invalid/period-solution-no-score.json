@@ -10,7 +10,6 @@
     "type": "audio/mp3",
     "url": "http://domain.com/audio/the_cat.mp3"
   },
-  "maximum": 2,
   "solutions": [
     {
       "region": {
@@ -20,10 +19,15 @@
           "time": 20.4,
           "before": 1,
           "after": 1
+        },
+        "end":{
+          "id": "2",
+          "time": 25,
+          "before": 2,
+          "after": 0
         }
       },
       "valid": true,
-      "score": 2,
       "feedback" : "He is in the kitchen"
     }
   ]

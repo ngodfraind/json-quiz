@@ -16,21 +16,21 @@
       "region": {
         "id": "2",
         "start": {
-            "id": "1",
-            "time": 20.4,
-            "before": 1,
-            "after": 1
+          "id": "1",
+          "time": 20.4,
+          "before": 1,
+          "after": 1
         },
         "end":{
-            "id": "2",
-            "time": 25,
-            "before": 2,
-            "after": 0
+          "id": "2",
+          "time": 25,
+          "before": 2,
+          "after": 0
         }
       },
       "valid": true,
       "score": 2,
-      "feedback" : "He is in the kitchen",
+      "feedback" : "He is in the kitchen"
     },
     {
       "region": {
