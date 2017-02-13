@@ -8,4 +8,12 @@ describe('Selection question', function () {
       'find'
     ]);
   });
+
+  describe('The *mode* property', function () {
+    it('must be an [[select|find|highlight]]', function () {
+      assert.hasError('unknown-mode', {
+        '.mode': 'should be equal to one of values'
+      });
+    });
+  })
 });
