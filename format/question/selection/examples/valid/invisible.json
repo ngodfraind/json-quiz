@@ -3,7 +3,7 @@
   "type": "application/x.selection+json",
   "content": "Question ?",
   "text": "Lorem ipsum sit amet.",
-  "mode": "invisible",
+  "mode": "find",
   "tries": 10,
   "solutions":  [
     {

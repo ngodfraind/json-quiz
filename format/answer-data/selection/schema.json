@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "application/x.selection+json"
+          ]
+        }
+      }
+    },
+    {
+      "oneOf": [
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                 "type": "object",
+                 "properties": {
+                   "selectionId": {
+                     "type": "string"
+                   },
+                   "colorId": {
+                     "type": "string"
+                   }
+                 }
+              }
+            }
+          }
+        },
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                 "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                 "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

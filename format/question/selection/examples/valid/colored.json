@@ -3,7 +3,7 @@
   "type": "application/x.selection+json",
   "content": "Question ?",
   "text": "Lorem ipsum sit amet.",
-  "mode": "colored",
+  "mode": "highlight",
   "colors": [
     {
       "id": "color1",

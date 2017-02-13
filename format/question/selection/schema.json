@@ -23,7 +23,7 @@
           "type": "object",
           "properties": {
             "mode": {
-              "enum": ["colored"]
+              "enum": ["highlight"]
             },
             "colors": {
               "type": "array",
@@ -101,7 +101,7 @@
           "type": "object",
           "properties": {
             "mode": {
-              "enum": ["invisible"]
+              "enum": ["find"]
             },
             "tries": {
               "type": "integer",
@@ -149,7 +149,7 @@
           "type": "object",
           "properties": {
             "mode": {
-              "enum": ["visible"]
+              "enum": ["select"]
             },
             "selections": {
               "type": "array",
