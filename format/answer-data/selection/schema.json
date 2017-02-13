@@ -31,9 +31,6 @@
                    }
                  }
               }
-            },
-            "tries": {
-              "type": "integer"
             }
           }
         },

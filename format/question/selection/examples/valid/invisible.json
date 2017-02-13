@@ -8,13 +8,9 @@
   "solutions":  [
     {
       "selectionId": "select1",
-      "answers": [
-        {
-          "score": 1,
-          "begin": 0,
-          "end": 4
-        }
-      ]
+      "score": 1,
+      "begin": 0,
+      "end": 4
     }
   ]
 }

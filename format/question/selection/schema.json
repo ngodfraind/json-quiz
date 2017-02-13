@@ -83,7 +83,7 @@
                           "type": "string"
                         },
                         "score": {
-                          "type": "integer"
+                          "type": "number"
                         }
                       },
                       "required": ["score", "colorId"]
@@ -117,28 +117,17 @@
                   "selectionId": {
                     "type": "string"
                   },
-                  "answers": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "begin": {
-                          "type": "integer"
-                        },
-                        "end": {
-                          "type": "integer"
-                        },
-                        "score": {
-                          "type": "integer"
-                        }
-                      },
-                      "required": ["score", "begin", "end"]
-                    }
+                  "begin": {
+                    "type": "integer"
+                  },
+                  "end": {
+                    "type": "integer"
+                  },
+                  "score": {
+                    "type": "number"
                   }
                 },
-                "required": ["selectionId", "answers"]
+                "required": ["selectionId", "begin", "end", "score"]
               }
             }
           },
@@ -182,7 +171,7 @@
                     "type": "string"
                   },
                   "score": {
-                    "type": "integer"
+                    "type": "number"
                   }
                 },
                 "required": ["selectionId", "score"]
