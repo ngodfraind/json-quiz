@@ -1,4 +1,5 @@
 {
   "type": "application/x.selection+json",
-  "data": [4, 8, 15, 16, 23, 42]
+  "data": [4, 8, 15, 16, 23, 42],
+  "tries": 42 
 }
