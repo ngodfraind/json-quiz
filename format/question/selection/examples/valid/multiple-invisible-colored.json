@@ -1,0 +1,61 @@
+{
+  "id": "1",
+  "type": "application/x.cloze+json",
+  "content": "Question ?",
+  "text": "Lorem ipsum sit amet.",
+  "mode": "invisible",
+  "tries": 5,
+  "colors": [
+    {
+      "id": "color1",
+      "code": "#0000FF"
+    },
+    {
+      "id": "color2",
+      "code": "#B0E0E6"
+    }
+  ],
+  "selections": [
+    {
+      "id": "select1",
+      "begin": 0,
+      "end": 4
+    },
+    {
+      "id": "select2",
+      "begin": 10,
+      "end": 15
+    }
+  ],
+  "solutions": {
+    "tries": 8,
+    "selections": [
+      {
+        "id": "select1",
+        "answers": [
+          {
+            "score": 1,
+            "colorId": "color1"
+          },
+          {
+            "score": -1,
+            "colorId": "color2"
+          }
+        ]
+      },
+      {
+        "id": "select2",
+        "answers": [
+          {
+            "score": 1,
+            "colorId": "color2"
+          },
+          {
+            "score": -1,
+            "colorId": "color1"
+          }
+        ]
+      }
+    ]
+  }
+}

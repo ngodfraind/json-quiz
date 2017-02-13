@@ -1,0 +1,28 @@
+{
+  "id": "1",
+  "type": "application/x.cloze+json",
+  "content": "Question ?",
+  "text": "Lorem ipsum sit amet.",
+  "mode": "invisible",
+  "tries": 10,
+  "selections": [
+    {
+      "id": "select1",
+      "begin": 0,
+      "end": 4
+    }
+  ],
+  "solutions": {
+    "tries": 5,
+    "selections": [
+      {
+        "id": "select1",
+        "answers": [
+          {
+            "score": 1
+          }
+        ]
+      }
+    ]
+  }
+}

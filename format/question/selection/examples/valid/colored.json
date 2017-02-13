@@ -1,0 +1,41 @@
+{
+  "id": "1",
+  "type": "application/x.cloze+json",
+  "content": "Question ?",
+  "text": "Lorem ipsum sit amet.",
+  "mode": "colored",
+  "colors": [
+    {
+      "id": "color1",
+      "code": "#0000FF"
+    },
+    {
+      "id": "color2",
+      "code": "#B0E0E6"
+    }
+  ],
+  "selections": [
+    {
+      "id": "select1",
+      "begin": 0,
+      "end": 4
+    }
+  ],
+  "solutions": {
+    "selections": [
+      {
+        "id": "select1",
+        "answers": [
+          {
+            "score": 1,
+            "colorId": "color1"
+          },
+          {
+            "score": -1,
+            "colorId": "color2"
+          }
+        ]
+      }
+    ]
+  }
+}
