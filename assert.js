@@ -30,6 +30,7 @@ var resolved = {
   'cloze-question': 'question/cloze',
   'open-answer': 'answer-data/open',
   'open-question': 'question/open',
+  'selection-question': 'question/selection',
   'answer': 'answer',
   'step': 'step',
   'quiz': 'quiz',

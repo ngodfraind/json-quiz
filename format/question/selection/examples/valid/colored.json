@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.cloze+json",
+  "type": "application/x.selection+json",
   "content": "Question ?",
   "text": "Lorem ipsum sit amet.",
   "mode": "colored",
@@ -21,21 +21,19 @@
       "end": 4
     }
   ],
-  "solutions": {
-    "selections": [
-      {
-        "id": "select1",
-        "answers": [
-          {
-            "score": 1,
-            "colorId": "color1"
-          },
-          {
-            "score": -1,
-            "colorId": "color2"
-          }
-        ]
-      }
-    ]
-  }
+  "solutions": [
+    {
+      "selectionId": "select1",
+      "answers": [
+        {
+          "score": 1,
+          "colorId": "color1"
+        },
+        {
+          "score": -1,
+          "colorId": "color2"
+        }
+      ]
+    }
+  ]
 }

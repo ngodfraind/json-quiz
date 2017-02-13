@@ -5,64 +5,42 @@
       "$ref": "http://json-quiz.github.io/json-quiz/schemas/question/base/schema.json"
     },
     {
+      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "type": {
-          "enum": ["application/x.cloze+json"]
+          "enum": ["application/x.selection+json"]
         },
         "text": {
           "type": "string"
-        },
-        "mode": {
-          "type": "string",
-          "enum": ["visible", "invisible", "colored"]
-        },
-        "tries": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "colors": {
-          "type": "array",
-          "minItems": 2,
-          "uniqueItems": true,
-          "items": {
-             "type": "object",
-             "properties": {
-               "id": {
-                 "type": "string"
-               },
-               "code": {
-                 "type": "string"
-               }
-             }
-          },
-          "required": ["id", "code"]
-        },
-        "selections": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "begin": {
-                "type": "integer"
-              },
-              "end": {
-                "type": "integer"
-              }
-            },
-            "required": ["id"]
-          }
-        },
-        "solutions": {
+        }
+      }
+    },
+    {
+      "oneOf": [
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
-            "tries": {
-              "type": "integer"
+            "mode": {
+              "enum": ["colored"]
+            },
+            "colors": {
+              "type": "array",
+              "minItems": 2,
+              "uniqueItems": true,
+              "items": {
+                 "type": "object",
+                 "properties": {
+                   "id": {
+                     "type": "string"
+                   },
+                   "code": {
+                     "type": "string"
+                   }
+                 }
+              },
+              "required": ["id", "code"]
             },
             "selections": {
               "type": "array",
@@ -74,6 +52,26 @@
                   "id": {
                     "type": "string"
                   },
+                  "begin": {
+                    "type": "integer"
+                  },
+                  "end": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["id", "begin", "end"]
+              }
+            },
+            "solutions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "selectionId": {
+                    "type": "string"
+                  },
                   "answers": {
                     "type": "array",
                     "minItems": 1,
@@ -81,19 +79,119 @@
                     "items": {
                       "type": "object",
                       "properties": {
-                        "color": "string",
-                        "score": "integer",
-                        "begin": "integer",
-                        "end": "integer"
-                      }
-                    },
-                    "required": ["score"]
+                        "colorId": {
+                          "type": "string"
+                        },
+                        "score": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": ["score", "colorId"]
+                    }
                   }
-                }
+                },
+                "required": ["selectionId", "answers"]
               }
             }
-         }
-      },
-      "required": ["text", "mode"]
-   }
+          },
+          "required": ["mode"]
+        },
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "mode": {
+              "enum": ["invisible"]
+            },
+            "tries": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "solutions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "selectionId": {
+                    "type": "string"
+                  },
+                  "answers": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "begin": {
+                          "type": "integer"
+                        },
+                        "end": {
+                          "type": "integer"
+                        },
+                        "score": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": ["score", "begin", "end"]
+                    }
+                  }
+                },
+                "required": ["selectionId", "answers"]
+              }
+            }
+          },
+          "required": ["mode"]
+        },
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "mode": {
+              "enum": ["visible"]
+            },
+            "selections": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "begin": {
+                    "type": "integer"
+                  },
+                  "end": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["id", "begin", "end"]
+              }
+            },
+            "solutions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "selectionId": {
+                    "type": "string"
+                  },
+                  "score": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["selectionId", "score"]
+              }
+            }
+          },
+          "required": ["mode"]
+        }
+      ]
+    }
+  ]
 }

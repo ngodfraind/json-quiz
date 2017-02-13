@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "type": "application/x.cloze+json",
+  "type": "application/x.selection+json",
   "content": "Question ?",
   "text": "Lorem ipsum sit amet.",
   "mode": "visible",
@@ -16,19 +16,10 @@
       "end": 10
     }
   ],
-  "solutions": {
-    "selections": [
-      {
-        "id": "select1",
-        "answers": [
-          {
-            "score": 1
-          },
-          {
-            "score": -1
-          }
-        ]
-      }
-    ]
-  }
+  "solutions": [
+    {
+      "selectionId": "select1",
+      "score": 1
+    }
+  ]
 }
