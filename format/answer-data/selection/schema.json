@@ -6,6 +6,7 @@
       "type": "object",
       "properties": {
         "type": {
+          "description": "The answer mime-type",
           "enum": [
             "application/x.selection+json"
           ]
@@ -24,9 +25,11 @@
                  "type": "object",
                  "properties": {
                    "selectionId": {
+                     "description": "The selection id",
                      "type": "string"
                    },
                    "colorId": {
+                     "description": "The color id",
                      "type": "string"
                    }
                  }
@@ -41,7 +44,8 @@
             "data": {
               "type": "array",
               "items": {
-                 "type": "integer"
+                 "type": "integer",
+                 "description": "The text positions pointed by the user"
               }
             }
           }
@@ -53,6 +57,7 @@
             "data": {
               "type": "array",
               "items": {
+                "description": "The selectionIds selected by the user",
                  "type": "string"
               }
             }
