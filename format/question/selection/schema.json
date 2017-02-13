@@ -55,7 +55,7 @@
                 "type": "integer"
               }
             },
-            "required": ["id", "begin", "end"]
+            "required": ["id"]
           }
         },
         "solutions": {
@@ -82,7 +82,9 @@
                       "type": "object",
                       "properties": {
                         "color": "string",
-                        "score": "integer"
+                        "score": "integer",
+                        "begin": "integer",
+                        "end": "integer"
                       }
                     },
                     "required": ["score"]

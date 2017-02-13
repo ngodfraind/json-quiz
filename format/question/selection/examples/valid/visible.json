@@ -9,6 +9,11 @@
       "id": "select1",
       "begin": 0,
       "end": 4
+    },
+    {
+      "id": "select2",
+      "begin": 5,
+      "end": 10
     }
   ],
   "solutions": {
@@ -18,6 +23,9 @@
         "answers": [
           {
             "score": 1
+          },
+          {
+            "score": -1
           }
         ]
       }
