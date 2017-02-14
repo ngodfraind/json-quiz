@@ -5,7 +5,9 @@ describe('Selection question', function () {
     assert.areValid([
       'highlight',
       'select',
-      'find'
+      'find',
+      'penalties',
+      'global-score'
     ]);
   });
 

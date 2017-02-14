@@ -15,6 +15,19 @@
         "text": {
           "description": "The question text",
           "type": "string"
+        },
+        "globalScore": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "success": "number",
+              "description": "The success score"
+            },
+            "type": {
+              "success": "failure",
+              "description": "The failure score"
+            }
+          }
         }
       }
     },
@@ -27,6 +40,10 @@
             "mode": {
               "description": "The question mode (highlight, find or select)",
               "enum": ["highlight"]
+            },
+            "penalty": {
+              "type": "number",
+              "description": "The default penalty for wrong answers"
             },
             "colors": {
               "description": "Colors used for the text highlights",
@@ -109,7 +126,7 @@
               }
             }
           },
-          "required": ["mode"]
+          "required": ["mode", "selections"]
         },
         {
           "$schema": "http://json-schema.org/draft-04/schema#",
@@ -149,7 +166,7 @@
                     "type": "number"
                   }
                 },
-                "required": ["selectionId", "begin", "end", "score"]
+                "required": ["selectionId", "begin", "end"]
               }
             }
           },
@@ -204,11 +221,11 @@
                     "type": "number"
                   }
                 },
-                "required": ["selectionId", "score"]
+                "required": ["selectionId"]
               }
             }
           },
-          "required": ["mode"]
+          "required": ["mode", "selections"]
         }
       ]
     }
