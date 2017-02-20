@@ -6,8 +6,7 @@ describe('Selection question', function () {
       'highlight',
       'select',
       'find',
-      'penalties',
-      'global-score'
+      'penalties'
     ]);
   });
 

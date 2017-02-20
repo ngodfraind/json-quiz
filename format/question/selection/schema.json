@@ -15,19 +15,6 @@
         "text": {
           "description": "The question text",
           "type": "string"
-        },
-        "globalScore": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "success": "number",
-              "description": "The success score"
-            },
-            "type": {
-              "success": "failure",
-              "description": "The failure score"
-            }
-          }
         }
       }
     },
