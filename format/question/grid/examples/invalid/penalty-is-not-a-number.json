@@ -2,12 +2,12 @@
   "id": "1",
   "type": "application/x.grid+json",
   "content": "Question ?",
-  "random": false,
   "penalty": "not a number",
   "sumMode": "row",
   "cells": [
     {
       "id": "1",
+      "input": false,
       "data": "Item A",
       "coordinates": [0, 0],
       "background":  "#fff",
@@ -15,13 +15,15 @@
     },
     {
       "id": "2",
+      "input": true,
       "coordinates": [1, 0],
       "background":  "#fff",
       "color": "#000",
-      "choices": ["lorem", "ipsum", "dolor", "sit"]
+      "choices": ["lorem", "ipsum", "dolor"]
     },
     {
       "id": "3",
+      "input": true,
       "coordinates": [2, 0],
       "background":  "#fff",
       "color": "#000"

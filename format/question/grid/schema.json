@@ -10,10 +10,6 @@
         "type": {
           "enum": ["application/x.grid+json"]
         },
-        "random": {
-          "type": "boolean",
-          "default": false
-        },
         "penalty": {
           "type": "number",
           "minimum": 0
@@ -57,14 +53,18 @@
               },
               "choices": {
                 "type": "array",
-                "minItems": 2,
                 "uniqueItems": true,
                 "items": {
                   "type": "string"
                 }
+              },
+              "input": {
+                "type": "boolean",
+                "default": false,
+                "description": "When no data nor choices set for the cell, this flag allow the player to correctly display an empty cell (ie not as a text input)."
               }
             },
-            "required": ["id", "coordinates", "background", "color"]
+            "required": ["id", "coordinates", "background", "color", "input"]
           }
         },
         "rows": {
@@ -105,6 +105,13 @@
                 "uniqueItems": true,
                 "items": {
                   "$ref": "http://json-quiz.github.io/json-quiz/schemas/misc/keyword/schema.json"
+                },
+                "properties": {
+                  "expected": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "In case of sum mode row or column or global score mode, we need to know which text answer is expected one (can not be based on score)"
+                  }
                 }
               }
             },
@@ -112,7 +119,7 @@
           }
         }
       },
-      "required": ["random", "penalty", "cells", "rows", "cols", "border"]
+      "required": ["penalty", "cells", "rows", "cols", "border"]
     }
   ]
 }
