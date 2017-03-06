@@ -58,7 +58,7 @@
               "type": "array",
               "items": {
                 "description": "The selectionIds selected by the user",
-                 "type": "string"
+                "type": "string"
               }
             }
           }
