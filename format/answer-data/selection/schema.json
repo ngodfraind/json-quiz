@@ -42,11 +42,21 @@
           "type": "object",
           "properties": {
             "data": {
-              "type": "array",
-              "items": {
-                 "type": "integer",
-                 "description": "The text positions pointed by the user"
+              "type": "object",
+              "properties": {
+                "positions": {
+                  "type": "array",
+                  "items": {
+                     "type": "integer",
+                     "description": "The text positions pointed by the user"
+                  },
+                  "tries": {
+                    "type": "integer"
+                  }
+                }
               }
+
+
             }
           }
         },
@@ -58,7 +68,7 @@
               "type": "array",
               "items": {
                 "description": "The selectionIds selected by the user",
-                "type": "string"
+                 "type": "string"
               }
             }
           }

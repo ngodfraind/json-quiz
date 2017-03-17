@@ -30,7 +30,8 @@
             },
             "penalty": {
               "type": "number",
-              "description": "The default penalty for wrong answers"
+              "description": "The default penalty for wrong answers",
+              "minimum": 0
             },
             "colors": {
               "description": "Colors used for the text highlights",
@@ -127,6 +128,11 @@
               "description": "The maximum amount of clicks/tries given for the question",
               "type": "integer",
               "minimum": 1
+            },
+            "penalty": {
+              "type": "number",
+              "description": "The default penalty for wrong answers",
+              "minimum": 0
             },
             "solutions": {
               "description": "The list of possible solutions",
