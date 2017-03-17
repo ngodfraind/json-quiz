@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "type": {
@@ -16,7 +15,6 @@
     {
       "oneOf": [
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "data": {
@@ -38,7 +36,6 @@
           }
         },
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "data": {
@@ -61,7 +58,6 @@
           }
         },
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "data": {

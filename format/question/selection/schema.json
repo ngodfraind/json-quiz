@@ -5,7 +5,6 @@
       "$ref": "http://json-quiz.github.io/json-quiz/schemas/question/base/schema.json"
     },
     {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "type": {
@@ -21,7 +20,6 @@
     {
       "oneOf": [
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "mode": {
@@ -117,7 +115,6 @@
           "required": ["mode", "selections"]
         },
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "mode": {
@@ -166,7 +163,6 @@
           "required": ["mode"]
         },
         {
-          "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
           "properties": {
             "mode": {
