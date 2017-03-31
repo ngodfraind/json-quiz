@@ -5,7 +5,8 @@ describe('Selection answer', function () {
     assert.areValid([
       'highlight',
       'select',
-      'find'
+      'find',
+      'empty'
     ]);
   });
 });
