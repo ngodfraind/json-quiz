@@ -1,6 +1,7 @@
 {
   "type": "application/x.selection+json",
   "data": {
+    "mode": "find",
     "positions": [],
     "tries": 0
   }

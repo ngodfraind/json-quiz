@@ -1,4 +1,7 @@
 {
   "type": "application/x.selection+json",
-  "data": ["selectionId1", "selectionId2"]
+  "data": {
+    "mode": "select",
+    "selections": ["selectionId1", "selectionId2"]
+  }
 }

@@ -1,4 +1,7 @@
 {
   "type": "application/x.selection+json",
-  "data": []
+  "data": {
+    "mode": "select",
+    "selections": []
+  }
 }
