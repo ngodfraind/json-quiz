@@ -6,8 +6,8 @@ describe('Selection answer', function () {
       'highlight',
       'select',
       'find',
-      'empty',
-      'no-click'
+      'no-click',
+      'empty'
     ]);
   });
 });
