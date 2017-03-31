@@ -7,7 +7,7 @@ describe('Selection answer', function () {
       'select',
       'find',
       'empty',
-      'find'
+      'no-click'
     ]);
   });
 });
