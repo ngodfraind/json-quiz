@@ -51,7 +51,8 @@
                     "type": "integer"
                   }
                 }
-              }
+              },
+              "required": ["positions", "tries"]
             }
           }
         },
