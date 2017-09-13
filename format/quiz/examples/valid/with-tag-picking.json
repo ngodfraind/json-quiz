@@ -29,8 +29,8 @@
     "showFeedback": true,
     "totalScoreOn": 0,
     "randomTags": {
-      "pick": [["tag1", 2], ["tag2", 3]],
-      "pageSize": 3
+      "pick":"dfgdfg",
+      "pageSize": "3ss"
     }
   },
   "steps": [

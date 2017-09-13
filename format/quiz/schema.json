@@ -166,11 +166,11 @@
                       ]
                     },
                     "pageSize": {
-                      "type": "integer",
+                      "type": "number",
                       "description": "The number of question per pages"
                     }
                   },
-                  "required": ["randomTags", "pageSize"]
+                  "required": ["pick", "pageSize"]
                 }
               },
               "required": ["randomTags"]
