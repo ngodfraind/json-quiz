@@ -146,7 +146,8 @@
                   "description": "Number of steps to use when a user pass the quiz. If 0, all the steps are used",
                   "default": 0
                 }
-              }
+              },
+              "required": ["randomOrder", "randomPick", "pick"]
             },
             {
               "type": "object",
