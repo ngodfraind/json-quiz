@@ -60,16 +60,54 @@
           "description": "The maximum amount of paper a quizz can have. If 0, there is no limit.",
           "default": 0
         },
-        "randomOrder": {
-          "enum": ["once", "never", "always"],
-          "description": "Randomize order of steps in the quiz",
-          "default": "never"
-        },
-        "randomPick": {
-          "enum": ["once", "never", "always"],
-          "description": "Pick a random sub set of steps in the quiz",
-          "default": "never"
-        },
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "randomOrder": {
+                "enum": ["once", "never", "always"],
+                "description": "Randomize order of steps in the quiz",
+                "default": "never"
+              },
+              "randomPick": {
+                "enum": ["once", "never", "always"],
+                "description": "Pick a random sub set of steps in the quiz",
+                "default": "never"
+              }
+            },
+            "required": ["randomOrder", "randomPick"]
+          },
+          {
+            "type": "object",
+            "randomTags": {
+              "type": "object",
+              "properties": {
+                "picking": {
+                  "type": "array",
+                  "items": {
+                     "type": "object",
+                     "properties": {
+                       "tag": {
+                         "description": "The tag name",
+                         "type": "string"
+                       },
+                       "amount": {
+                         "description": "The number of question fetched",
+                         "type": "integer"
+                       }
+                     },
+                     "required": ["tag", "amount"]
+                  }
+                },
+                "questionPerPage": {
+                  "type": "integer",
+                  "description": "The number of question per pages"
+                }
+              },
+              "required": ["picking", "questionPerPage"]
+            }
+          }
+        ],
         "pick": {
           "type": "number",
           "minimum": 0,
