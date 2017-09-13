@@ -31,7 +31,7 @@
     "totalScoreOn": 0,
     "randomTags": {
       "pick": [["tag1", 2], ["tag2", 3]],
-      "questionPerPage": 3
+      "pageSize": 3
     }
   },
   "steps": [

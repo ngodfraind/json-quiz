@@ -146,8 +146,7 @@
                   "description": "Pick a random sub set of steps in the quiz",
                   "default": "never"
                 }
-              },
-              "required": ["randomOrder", "randomPick"]
+              }
             },
             {
               "type": "object",
@@ -166,15 +165,13 @@
                         }
                       ]
                     },
-                    "questionPerPage": {
+                    "pageSize": {
                       "type": "integer",
                       "description": "The number of question per pages"
                     }
-                  },
-                  "required": ["pick", "questionPerPage"]
+                  }
                 }
-              },
-              "required": ["randomTags"]
+              }
             }
           ]
         }
