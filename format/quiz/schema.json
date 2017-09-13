@@ -146,31 +146,32 @@
                   "description": "Pick a random sub set of steps in the quiz",
                   "default": "never"
                 }
-              },
-              "required": ["randomOrder", "randomPick"]
+              }
             },
             {
               "type": "object",
-              "randomTags": {
-                "type": "object",
-                "properties": {
-                  "pick": {
-                    "type": "array",
-                    "items": [
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "integer"
-                      }
-                    ]
+              "properties": {
+                "randomTags": {
+                  "type": "object",
+                  "properties": {
+                    "pick": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "integer"
+                        }
+                      ]
+                    },
+                    "questionPerPage": {
+                      "type": "integer",
+                      "description": "The number of question per pages"
+                    }
                   },
-                  "questionPerPage": {
-                    "type": "integer",
-                    "description": "The number of question per pages"
-                  }
-                },
-                "required": ["pick", "questionPerPage"]
+                  "required": ["pick", "questionPerPage"]
+                }
               }
             }
           ]
