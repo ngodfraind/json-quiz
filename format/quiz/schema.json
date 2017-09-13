@@ -156,14 +156,17 @@
                   "properties": {
                     "pick": {
                       "type": "array",
-                      "items": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "integer"
-                        }
-                      ]
+                      "items": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "integer"
+                          }
+                        ]
+                      }
                     },
                     "pageSize": {
                       "type": "number",
