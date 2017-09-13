@@ -169,9 +169,11 @@
                       "type": "integer",
                       "description": "The number of question per pages"
                     }
-                  }
+                  },
+                  "required": ["randomTags", "pageSize"]
                 }
-              }
+              },
+              "required": ["randomTags"]
             }
           ]
         }
