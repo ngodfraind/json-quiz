@@ -154,29 +154,23 @@
               "randomTags": {
                 "type": "object",
                 "properties": {
-                  "picking": {
+                  "pick": {
                     "type": "array",
-                    "items": {
-                       "type": "object",
-                       "properties": {
-                         "tag": {
-                           "description": "The tag name",
-                           "type": "string"
-                         },
-                         "amount": {
-                           "description": "The number of question fetched",
-                           "type": "integer"
-                         }
-                       },
-                       "required": ["tag", "amount"]
-                    }
+                    "items": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "integer"
+                      }
+                    ]
                   },
                   "questionPerPage": {
                     "type": "integer",
                     "description": "The number of question per pages"
                   }
                 },
-                "required": ["picking", "questionPerPage"]
+                "required": ["pick", "questionPerPage"]
               }
             }
           ]

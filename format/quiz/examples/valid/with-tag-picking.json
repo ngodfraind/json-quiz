@@ -30,7 +30,7 @@
     "showFeedback": true,
     "totalScoreOn": 0,
     "randomTags": {
-      "picking": [{"tag": "tag1", "amount": 2}, {"tag": "tag2", "amount": 2}],
+      "pick": [["tag1", 2], ["tag2", 3]],
       "questionPerPage": 3
     }
   },
