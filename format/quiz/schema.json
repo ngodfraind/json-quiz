@@ -1,26 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "allOf": [
-    {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "meta": {
-          "allOf": [
-            {
-              "$ref": "http://json-quiz.github.io/json-quiz/schemas/metadata/schema.json"
-            }
-          ]
-        },
-        "parameters": {
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "meta": {
+      "allOf": [
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/metadata/schema.json"
+        }
+      ]
+    },
+    "parameters": {
+      "allOf": [
+        {
           "type": "object",
           "properties": {
             "type": {
@@ -131,63 +131,63 @@
             }
           }
         },
-        "steps": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": { "$ref": "http://json-quiz.github.io/json-quiz/schemas/step/schema.json" }
-        }
-      },
-      "required": ["id", "title", "steps"]
-    },
-    {
-      "oneOf": [
         {
-          "type": "object",
-          "properties": {
-            "randomOrder": {
-              "enum": ["once", "never", "always"],
-              "description": "Randomize order of steps in the quiz",
-              "default": "never"
-            },
-            "randomPick": {
-              "enum": ["once", "never", "always"],
-              "description": "Pick a random sub set of steps in the quiz",
-              "default": "never"
-            }
-          },
-          "required": ["randomOrder", "randomPick"]
-        },
-        {
-          "type": "object",
-          "randomTags": {
-            "type": "object",
-            "properties": {
-              "picking": {
-                "type": "array",
-                "items": {
-                   "type": "object",
-                   "properties": {
-                     "tag": {
-                       "description": "The tag name",
-                       "type": "string"
-                     },
-                     "amount": {
-                       "description": "The number of question fetched",
-                       "type": "integer"
-                     }
-                   },
-                   "required": ["tag", "amount"]
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "randomOrder": {
+                  "enum": ["once", "never", "always"],
+                  "description": "Randomize order of steps in the quiz",
+                  "default": "never"
+                },
+                "randomPick": {
+                  "enum": ["once", "never", "always"],
+                  "description": "Pick a random sub set of steps in the quiz",
+                  "default": "never"
                 }
               },
-              "questionPerPage": {
-                "type": "integer",
-                "description": "The number of question per pages"
-              }
+              "required": ["randomOrder", "randomPick"]
             },
-            "required": ["picking", "questionPerPage"]
-          }
+            {
+              "type": "object",
+              "randomTags": {
+                "type": "object",
+                "properties": {
+                  "picking": {
+                    "type": "array",
+                    "items": {
+                       "type": "object",
+                       "properties": {
+                         "tag": {
+                           "description": "The tag name",
+                           "type": "string"
+                         },
+                         "amount": {
+                           "description": "The number of question fetched",
+                           "type": "integer"
+                         }
+                       },
+                       "required": ["tag", "amount"]
+                    }
+                  },
+                  "questionPerPage": {
+                    "type": "integer",
+                    "description": "The number of question per pages"
+                  }
+                },
+                "required": ["picking", "questionPerPage"]
+              }
+            }
+          ]
         }
       ]
+    },
+    "steps": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "http://json-quiz.github.io/json-quiz/schemas/step/schema.json" }
     }
-  ]
+  },
+  "required": ["id", "title", "steps"]
 }
